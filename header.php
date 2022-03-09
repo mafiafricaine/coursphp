@@ -12,7 +12,7 @@
             if(isset($title)):
               echo $title;
             else:
-              echo "Mon site";
+              echo "Mon superbe site";
             endif
     ?></title>
 
@@ -38,6 +38,9 @@
           </li>
           <li class="nav-item <?php if ($nav === "aPropos"): ?> active <?php endif ?>">
             <a class="nav-link" href="/coursphp/aPropos">A propos</a>
+          </li>
+          <li class="nav-item <?php if ($nav === "jeuDuHasard"): ?> active <?php endif ?>">
+            <a class="nav-link" href="/coursphp/jeuDuHasard">Jeu du Hasard</a>
           </li>
           
         </ul>
