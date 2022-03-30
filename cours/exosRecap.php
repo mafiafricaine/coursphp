@@ -219,6 +219,7 @@ foreach($classe as $user){
     }
 }
 */
+/*
 $nbr = readline("Entrez un nombre : ");
 $tab = [];
 if (is_numeric($nbr)) {
@@ -259,3 +260,13 @@ foreach($tab as $nombre){
         echo $nombre." est un nombre premier\n";
     }
 }
+*/
+$nombre=(int)readline("Entrez un nombre entre 0 et 10 pour gagner un lot : ");
+$numéroGagnant = rand(0,10);
+while($nombre !== $numéroGagnant){
+echo "Mauvais numéro, vous n'avez pas gagné !". "\n";
+$nombre=(int)readline("Retentez votre chance, entrez un nombre à
+nouveau : ");
+}
+echo "Bravo !!! \nVous avez enfin trouvé le numéro gagnant ! \nC'était le
+numéro $numéroGagnant";

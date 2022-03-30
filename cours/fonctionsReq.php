@@ -1,4 +1,5 @@
 <?php
+
     function ouiOuNon(?string $phrase = null) : bool{
         while(true){
             $reponse = readline($phrase . " - (o)ui/(n)on : " );

@@ -1,7 +1,11 @@
 <?php
+    session_start();
+
+    
     $title = "Page d'Accueil";
     $nav = "index";
     require "header.php";
+    
 ?>
     <main role="main" class="container">
 

@@ -1,4 +1,6 @@
-
+<?php 
+ require_once "functions/authentification.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -31,19 +33,35 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <?php if ($nav === "index"): ?> active <?php endif ?>">
-            <a class="nav-link" href="/coursphp/index">Acceuil</a>
+            <a class="nav-link" href="index">Acceuil</a>
           </li>
           <li class="nav-item <?php if ($nav === "contact"): ?> active <?php endif ?>">
-            <a class="nav-link" href="/coursphp/contact">Contact</a>
+            <a class="nav-link" href="contact">Contact</a>
           </li>
           <li class="nav-item <?php if ($nav === "aPropos"): ?> active <?php endif ?>">
-            <a class="nav-link" href="/coursphp/aPropos">A propos</a>
+            <a class="nav-link" href="aPropos">A propos</a>
           </li>
           <li class="nav-item <?php if ($nav === "jeuDuHasard"): ?> active <?php endif ?>">
-            <a class="nav-link" href="/coursphp/jeuDuHasard">Jeu du Hasard</a>
+            <a class="nav-link" href="jeuDuHasard">Jeu du Hasard</a>
           </li>
-          
+          <li class="nav-item <?php if ($nav === "DashBoard"): ?> active <?php endif ?>">
+            <a class="nav-link" href="dashboard">Dashboard</a>
+          </li> 
         </ul>
-       
+        <ul class="navbar-nav">
+          <?php if (!is_connected()):?>
+            <li class="nav-item <?php if ($nav === "login"): ?> active <?php endif ?>">
+              <a class="nav-link" href="login">Login</a>
+            </li>
+          <?php else : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard"><?php echo $_SESSION['pseudo'];?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+          <?php endif; ?>
+        </ul>
+        
       </div>
     </nav>

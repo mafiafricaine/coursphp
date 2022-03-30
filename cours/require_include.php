@@ -1,17 +1,7 @@
 <?php
     
     require_once "fonctionsReq.php";
-    
-
-   
-
-
-
-
-
-
-
-
+ 
 
     //require_once "fonctionsReq.php";
     //require "fonctionsReq.php";
