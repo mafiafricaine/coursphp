@@ -1,6 +1,8 @@
 <?php 
     require "Voiture.php";
     require "Cuicui.php";
+    require "Personne.php";
+    require "Personnage.php";
 
     /*$maVoiture = new Voiture();
     var_dump($maVoiture);*/
@@ -13,11 +15,48 @@
     */
 
 
-    $monCuicui= new Cuicui();
+    
+    $maVoiture = new Cuicui("Verte", 450.0,1000 );
+    $maVoiture3 = new Cuicui("Noire",1750.40,10000 );
+
+    $maVoitureFinale = new Voiture("Bleue", 4200.5, 5005, "Audi");
+    
+    echo $maVoitureFinale;
+
+    
+
+
+
+    /*
+    $maVoiture2->changerCouleur("Verte");
+    $maVoiture2->changerPoids(600.95);
+    $maVoiture2->changerPrix(15000);
+
+    echo "La voiture 1 <br>";
+    echo "Couleur : " . $maVoiture->obtenirCouleur() ."<br>";
+    echo "Poids : " . $maVoiture->obtenirPoids() ." Kg<br>";
+    echo "Prix : " . $maVoiture->obtenirPrix() ." Euros<br>";
+
+    echo "La voiture 2 <br>";
+    echo "Couleur : " . $maVoiture2->obtenirCouleur() ."<br>";
+    echo "Poids : " . $maVoiture2->obtenirPoids() ." Kg<br>";
+    echo "Prix : " . $maVoiture2->obtenirPrix() ." Euros<br>";
+
+    if ($maVoiture->obtenirPrix() > $maVoiture2->obtenirPrix()){
+        echo "La voiture " . $maVoiture->obtenirCouleur(). " est plus chere que la voiture " .$maVoiture2->obtenirCouleur() . "<br>";
+        echo "Il y a une différence de prix de " . ($maVoiture->obtenirPrix() - $maVoiture2->obtenirPrix()) . " Euros";
+    }else{
+        echo "La voiture " . $maVoiture2->obtenirCouleur(). " est plus chere que la voiture " .$maVoiture->obtenirCouleur(). "<br>";
+        echo "Il y a une différence de prix de " . ($maVoiture2->obtenirPrix() - $maVoiture->obtenirPrix()) . " Euros";
+    }
+    */
+    
     //$monCuicui->accelerer();
     //$monCuicui->demarrer();
-    $monCuicui->changerCouleur("Rouge");
-    //var_dump($monCuicui);
+    //echo "Ma voiture est de couleur : ". $maVoiture->obtenirCouleur() ."<br>";
+    //$maVoiture->changerCouleur("Gris");
+    //echo "Ma nouvelle couleur : " . $maVoiture->obtenirCouleur();
+
     /*
     echo "Ma voiture est de couleur : ".$monCuicui->couleur . "<br>";
     echo "Elle a un poids de : ".$monCuicui->poids ." Kg" . "<br>";
@@ -144,7 +183,140 @@
         echo "Il y a une difference de prix de " . ($maVoiture7->obtenirPrix()-$maVoiture6->obtenirPrix()) . " Euros";
     }
     */
-    echo $maVoiture6;
+
+    //$maVoiture8 = new Voiture("Grise", 975.8, 6450, "Mercedes");
+    //echo $maVoiture8;
+
+    /*
+    //exo 5 pdf 11
+    $personne1 = new Personne("Julien", 34, "M");
+    $personne2 = new Personne("Sarah", 27, "F");
+    $personne3 = new Personne("Mohamed", 15, "M");
+    $personne4 = new Personne("Konchita", 40, "X");
+    $personne5 = new Personne("Bruce", 45, "M");
+
+    $tabPersonne = [$personne1, $personne2, $personne3, $personne4, $personne5];
+    foreach ($tabPersonne as $personne){
+        echo $personne . "<br>";
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $pers1 = $personne2;
+    $pers2 = $personne4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if ($pers1->estPlusAgee($pers2)){
+        echo $pers1->getPrenom() . " a ". $pers1->getAge() . " ans et est plus agée que " . $pers2->getPrenom() . " qui a " . $pers2->getAge() . " ans <br>";
+    }else{
+        echo $pers2->getPrenom() . " a ". $pers2->getAge() . " ans et est plus agée que " . $pers1->getPrenom() . " qui a " . $pers1->getAge() . " ans <br>";
+
+    }
+    */
+
+    /*
+    //exo 6 pdf 11
+    $personnage1 = new Personnage("Ryu", (rand(5,10)*10), rand(10,50));
+    $personnage2 = new Personnage("Ken", (rand(5,10)*10), rand(10,50));
+    $personnage3 = new Personnage("Sub-Zero", (rand(5,10)*10), rand(10,50));
+    $personnage4 = new Personnage("Jin Kazama", (rand(5,10)*10), rand(10,50));
+    $mario = new Personnage("Mario", (rand(5,10)*10), rand(10,50));
+
+    $tabPersonnage = [$personnage1, $personnage2, $personnage3, $personnage4, $mario];
+    foreach ($tabPersonnage as $personnage){
+        echo $personnage . "<br>";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $player1 = $personnage4;
+    $player2 = $personnage1; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $tour = 0;
+    $nbrCoups1=0;
+    $nbrCoups2=0;
+    while ($player1->estVivant() AND $player2->estVivant()){
+        if ($tour % 2 == 0){
+            $player1->lanceAttaque($player2);
+            $nbrCoups1++;
+        }else{
+            $player2->lanceAttaque($player1);
+            $nbrCoups2++;
+        }
+        $tour++;
+    }
+    if ($player1->estVivant()){
+        echo "Le personnage " . $player1->getNom() . " a battu le personnage ". $player2->getNom() . 
+             " en " . $nbrCoups1 . " coups. <br>Et il lui reste ". $player1->getVie() . " de points de vie"; 
+    }else{
+        echo "Le personnage " . $player2->getNom() . " a battu le personnage ". $player1->getNom() . 
+             " en " . $nbrCoups2 . " coups. <br>Et il lui reste ". $player2->getVie() . " de points de vie"; 
+    }
+    */
+
 
 
    

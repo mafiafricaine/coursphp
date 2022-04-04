@@ -49,14 +49,15 @@
             return $this->prix >= $uneVoiture->obtenirPrix();
         }
 
-        /*
+        
         public function __toString() : string{
             return  "Couleur : " . $this->couleur."<br>".
                     "Poids : " . $this->poids." Kg<br>".
                     "Prix : " . $this->prix ." Euros<br>".
                     "Marque : " . $this->marque ."<br>";
         }
-        */
+        
+        
 
     }
     
