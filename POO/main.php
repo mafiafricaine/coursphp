@@ -15,16 +15,17 @@
     */
 
 
-    
+    /*
     $maVoiture = new Cuicui("Verte", 450.0,1000 );
     $maVoiture3 = new Cuicui("Noire",1750.40,10000 );
 
-    $maVoitureFinale = new Voiture("Bleue", 4200.5, 5005, "Audi");
+    $maVoitureFinale = new Voiture("Bleue", 4200.5, 5005, "Mercedes");
+    $maVoitureFinale->setMarque("BMW");
     
     echo $maVoitureFinale;
-
+    */
     
-
+    
 
 
     /*
@@ -140,17 +141,28 @@
 /*-----------------------------------------------------------------*/
     /*
     //exo 1 pdf 11
-    $maVoiture3 = new Voiture("Noire",1750.40,10000 );
+    $maVoiture3 = new Cuicui("Noire",1750.40,10000 );
     echo "La voiture 3 <br>";
     echo "Couleur : " . $maVoiture3->obtenirCouleur() ."<br>";
     echo "Poids : " . $maVoiture3->obtenirPoids() ." Kg<br>";
     echo "Prix : " . $maVoiture3->obtenirPrix() ." Euros<br>";
     */
+    
 
-    /* 
+
+    /*
     //exo 2 pdf 11
     $maVoiture4 = new Voiture("Bleue",1050.30,2999 );
     $maVoiture5 = new Voiture("Beige",2200,17500 );
+    echo "La voiture 4 <br>";
+    echo "Couleur : " . $maVoiture4->obtenirCouleur() ."<br>";
+    echo "Poids : " . $maVoiture4->obtenirPoids() ." Kg<br>";
+    echo "Prix : " . $maVoiture4->obtenirPrix() ." Euros<br>";
+
+    echo "La voiture 5 <br>";
+    echo "Couleur : " . $maVoiture5->obtenirCouleur() ."<br>";
+    echo "Poids : " . $maVoiture5->obtenirPoids() ." Kg<br>";
+    echo "Prix : " . $maVoiture5->obtenirPrix() ." Euros<br>";
     */
 
     /*
@@ -194,60 +206,25 @@
     $personne3 = new Personne("Mohamed", 15, "M");
     $personne4 = new Personne("Konchita", 40, "X");
     $personne5 = new Personne("Bruce", 45, "M");
+    
+    $personne5->setAge(13);
 
     $tabPersonne = [$personne1, $personne2, $personne3, $personne4, $personne5];
     foreach ($tabPersonne as $personne){
         echo $personne . "<br>";
     }
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-    $pers1 = $personne2;
-    $pers2 = $personne4;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    $pers1 = $personne4;
+    $pers2 = $personne3;
 
     if ($pers1->estPlusAgee($pers2)){
         echo $pers1->getPrenom() . " a ". $pers1->getAge() . " ans et est plus agée que " . $pers2->getPrenom() . " qui a " . $pers2->getAge() . " ans <br>";
     }else{
         echo $pers2->getPrenom() . " a ". $pers2->getAge() . " ans et est plus agée que " . $pers1->getPrenom() . " qui a " . $pers1->getAge() . " ans <br>";
-
     }
     */
 
-    /*
+    
     //exo 6 pdf 11
     $personnage1 = new Personnage("Ryu", (rand(5,10)*10), rand(10,50));
     $personnage2 = new Personnage("Ken", (rand(5,10)*10), rand(10,50));
@@ -260,40 +237,8 @@
         echo $personnage . "<br>";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     $player1 = $personnage4;
     $player2 = $personnage1; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     $tour = 0;
     $nbrCoups1=0;
@@ -315,10 +260,4 @@
         echo "Le personnage " . $player2->getNom() . " a battu le personnage ". $player1->getNom() . 
              " en " . $nbrCoups2 . " coups. <br>Et il lui reste ". $player2->getVie() . " de points de vie"; 
     }
-    */
-
-
-
-   
-   
 ?>
